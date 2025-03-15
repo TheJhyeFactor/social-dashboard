@@ -126,4 +126,26 @@ document.getElementById('date-range').addEventListener('change', (e) => {
         (84.2 * multiplier).toFixed(1) + 'K';
 });
 
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeButton(savedTheme);
+}
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const newTheme = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeButton(newTheme);
+}
+
+function updateThemeButton(theme) {
+    const btn = document.getElementById('theme-toggle');
+    btn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+}
+
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+initTheme();
 window.addEventListener('load', initCharts);

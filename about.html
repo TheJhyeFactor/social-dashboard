@@ -3,62 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - ConnectHub</title>
+    <title>About / ConnectHub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">ConnectHub</div>
-            <ul class="nav-menu">
-                <li><a href="feed.html">Feed</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="index.html">Analytics</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
-        <article class="about-content">
-            <h1>Why I Built This Dashboard</h1>
-            <p class="date">March 2025</p>
-
-            <p>So I was spending way too much time jumping between different social media platforms trying to figure out what was actually working and what wasn't. Every platform has their own analytics, but they're all different and honestly pretty limited.</p>
-
-            <p>I wanted to see everything in one place. Not just follower counts, but actual engagement rates, post performance over time, what type of content works best. The usual stuff these platforms show you is pretty basic and doesn't really help you make decisions.</p>
-
-            <h2>The Problem</h2>
-            <p>Most social media dashboards either cost money or they're super complicated to use. I just wanted something clean that would show me the metrics I actually care about without having to dig through a bunch of menus or pay a monthly subscription.</p>
-
-            <p>Plus, as someone who builds websites, I figured this would be a good portfolio piece. Dashboards are everywhere in modern apps, so knowing how to build a good one is pretty valuable.</p>
-
-            <h2>What I Learned</h2>
-            <p>This project taught me a lot about data visualization. I used Chart.js for the graphs because it's straightforward and looks good without much customization. The tricky part was figuring out what metrics to show and how to display them in a way that's actually useful.</p>
-
-            <p>I also spent time thinking about the layout. A dashboard needs to be scannable - you should be able to glance at it and understand what's going on. That's why I put the main stats at the top in cards and then broke down the detailed charts below.</p>
-
-            <h2>The Tech</h2>
-            <p>Built this with vanilla JavaScript, HTML, and CSS. No framework needed for something like this. Chart.js handles the graphs, and everything else is just DOM manipulation and styling.</p>
-
-            <p>It's all client-side, so you can fork it and customize it however you want. The data is hardcoded right now since this is a demo, but in a real version you'd hook it up to actual social media APIs.</p>
-
-            <h2>Future Plans</h2>
-            <p>If I come back to this, I'd probably add:</p>
-            <ul>
-                <li>Export functionality to download reports as PDFs</li>
-                <li>More detailed breakdowns by hour/day of week</li>
-                <li>Comparison views to see how this month compares to last month</li>
-                <li>Maybe add some predictive stuff to show trends</li>
+        <nav class="sidebar">
+            <div class="logo">X</div>
+            <ul class="nav-menu">
+                <li><a href="feed.html"><span class="nav-icon">🏠</span><span>Feed</span></a></li>
+                <li><a href="profile.html"><span class="nav-icon">👤</span><span>Profile</span></a></li>
+                <li><a href="index.html"><span class="nav-icon">📊</span><span>Analytics</span></a></li>
+                <li><a href="about.html" class="active"><span class="nav-icon">ℹ️</span><span>About</span></a></li>
             </ul>
+            <button id="theme-toggle" class="theme-btn">☀️ Light</button>
+        </nav>
 
-            <p>But for now, it does what I need it to do. Shows the important metrics in a clean way, and it looks decent in my portfolio.</p>
+        <main style="border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
+            <header class="dashboard-header">
+                <h1>About</h1>
+            </header>
 
-            <div class="signature">
-                <p>- Jhye</p>
+            <article style="max-width: 700px; margin: 0 auto; padding: 40px 20px;">
+                <h1 style="font-size: 2em; margin-bottom: 8px;">Why I Built This Dashboard</h1>
+                <p style="color: var(--text-secondary); margin-bottom: 30px; font-style: italic;">March 2025</p>
+
+                <p style="margin-bottom: 20px; line-height: 1.7;">So I was spending way too much time jumping between different social media platforms trying to figure out what was actually working and what wasn't. Every platform has their own analytics, but they're all different and honestly pretty limited.</p>
+
+                <p style="margin-bottom: 20px; line-height: 1.7;">I wanted to see everything in one place. Not just follower counts, but actual engagement rates, post performance over time, what type of content works best. The usual stuff these platforms show you is pretty basic and doesn't really help you make decisions.</p>
+
+                <h2 style="margin: 30px 0 15px; font-size: 1.5em;">The Problem</h2>
+                <p style="margin-bottom: 20px; line-height: 1.7;">Most social media dashboards either cost money or they're super complicated to use. I just wanted something clean that would show me the metrics I actually care about without having to dig through a bunch of menus or pay a monthly subscription.</p>
+
+                <p style="margin-bottom: 20px; line-height: 1.7;">Plus, as someone who builds websites, I figured this would be a good portfolio piece. Dashboards are everywhere in modern apps, so knowing how to build a good one is pretty valuable.</p>
+
+                <h2 style="margin: 30px 0 15px; font-size: 1.5em;">What I Learned</h2>
+                <p style="margin-bottom: 20px; line-height: 1.7;">This project taught me a lot about data visualization. I used Chart.js for the graphs because it's straightforward and looks good without much customization. The tricky part was figuring out what metrics to show and how to display them in a way that's actually useful.</p>
+
+                <p style="margin-bottom: 20px; line-height: 1.7;">I also spent time thinking about the layout. A dashboard needs to be scannable - you should be able to glance at it and understand what's going on. That's why I put the main stats at the top in cards and then broke down the detailed charts below.</p>
+
+                <h2 style="margin: 30px 0 15px; font-size: 1.5em;">The Tech</h2>
+                <p style="margin-bottom: 20px; line-height: 1.7;">Built this with vanilla JavaScript, HTML, and CSS. No framework needed for something like this. Chart.js handles the graphs, and everything else is just DOM manipulation and styling.</p>
+
+                <p style="margin-bottom: 20px; line-height: 1.7;">It's all client-side, so you can fork it and customize it however you want. The data is hardcoded right now since this is a demo, but in a real version you'd hook it up to actual social media APIs.</p>
+
+                <h2 style="margin: 30px 0 15px; font-size: 1.5em;">Future Plans</h2>
+                <p style="margin-bottom: 15px; line-height: 1.7;">If I come back to this, I'd probably add:</p>
+                <ul style="margin: 20px 0 20px 30px; line-height: 1.8;">
+                    <li style="margin-bottom: 10px;">Export functionality to download reports as PDFs</li>
+                    <li style="margin-bottom: 10px;">More detailed breakdowns by hour/day of week</li>
+                    <li style="margin-bottom: 10px;">Comparison views to see how this month compares to last month</li>
+                    <li style="margin-bottom: 10px;">Maybe add some predictive stuff to show trends</li>
+                </ul>
+
+                <p style="margin-bottom: 20px; line-height: 1.7;">But for now, it does what I need it to do. Shows the important metrics in a clean way, and it looks decent in my portfolio.</p>
+
+                <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid var(--border-color); font-size: 1.2em; font-style: italic; color: var(--text-secondary);">
+                    <p>- Jhye</p>
+                </div>
+            </article>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="sidebar-card">
+                <h3>Who to follow</h3>
+                <div style="padding: 12px 16px; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=sarah" style="width: 48px; height: 48px; border-radius: 50%;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 700; font-size: 0.95em;">Sarah Chen</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85em;">@sarahcodes</div>
+                    </div>
+                    <button style="padding: 6px 16px; background: var(--accent-blue); color: #fff; border: none; border-radius: 20px; font-weight: 700; font-size: 0.85em; cursor: pointer;">Follow</button>
+                </div>
+                <div style="padding: 12px 16px; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=mike" style="width: 48px; height: 48px; border-radius: 50%;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 700; font-size: 0.95em;">Mike Rodriguez</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85em;">@mikedev</div>
+                    </div>
+                    <button style="padding: 6px 16px; background: var(--accent-blue); color: #fff; border: none; border-radius: 20px; font-weight: 700; font-size: 0.85em; cursor: pointer;">Follow</button>
+                </div>
+                <div style="padding: 12px 16px; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=emma" style="width: 48px; height: 48px; border-radius: 50%;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 700; font-size: 0.95em;">Emma Johnson</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85em;">@emmajay</div>
+                    </div>
+                    <button style="padding: 6px 16px; background: var(--accent-blue); color: #fff; border: none; border-radius: 20px; font-weight: 700; font-size: 0.85em; cursor: pointer;">Follow</button>
+                </div>
             </div>
-        </article>
+
+            <div class="sidebar-card">
+                <h3>Trending</h3>
+                <div class="trending-item">
+                    <div class="trending-category">Web Development</div>
+                    <div class="trending-topic">#DataVisualization</div>
+                    <div class="trending-count">12.5K posts</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Technology</div>
+                    <div class="trending-topic">#JavaScript</div>
+                    <div class="trending-count">24.1K posts</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Design</div>
+                    <div class="trending-topic">#Dashboard</div>
+                    <div class="trending-count">8.3K posts</div>
+                </div>
+            </div>
+        </aside>
     </div>
+
+    <script>
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeButton(newTheme);
+        }
+
+        function updateThemeButton(theme) {
+            const btn = document.getElementById('theme-toggle');
+            btn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        initTheme();
+    </script>
 </body>
 </html>

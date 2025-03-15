@@ -3,120 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed - ConnectHub</title>
+    <title>Feed / ConnectHub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">ConnectHub</div>
-            <ul class="nav-menu">
-                <li><a href="feed.html" class="active">Feed</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="index.html">Analytics</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
-        <div class="feed-layout">
-            <div class="feed-main">
-                <div class="create-post">
-                    <textarea placeholder="What's on your mind?"></textarea>
-                    <button>Post</button>
-                </div>
+        <nav class="sidebar">
+            <div class="logo">X</div>
+            <ul class="nav-menu">
+                <li><a href="feed.html" class="active"><span class="nav-icon">🏠</span><span>Feed</span></a></li>
+                <li><a href="profile.html"><span class="nav-icon">👤</span><span>Profile</span></a></li>
+                <li><a href="index.html"><span class="nav-icon">📊</span><span>Analytics</span></a></li>
+                <li><a href="about.html"><span class="nav-icon">ℹ️</span><span>About</span></a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn">☀️ Light</button>
+        </nav>
 
-                <div class="post">
-                    <div class="post-header">
-                        <img src="https://via.placeholder.com/50" alt="User avatar">
-                        <div>
-                            <h4>Jhye O'meley</h4>
-                            <p>2 hours ago</p>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <p>Just deployed my new analytics dashboard! Check it out if you're into data visualization 📊</p>
-                        <img src="https://via.placeholder.com/600x300" alt="Post image">
-                    </div>
-                    <div class="post-actions">
-                        <button>❤️ 1,243 Likes</button>
-                        <button>💬 87 Comments</button>
-                        <button>🔄 234 Shares</button>
-                    </div>
-                </div>
+        <main class="feed-main">
+            <header class="dashboard-header">
+                <h1>Feed</h1>
+            </header>
 
-                <div class="post">
-                    <div class="post-header">
-                        <img src="https://via.placeholder.com/50" alt="User avatar">
-                        <div>
-                            <h4>Sarah Chen</h4>
-                            <p>5 hours ago</p>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <p>Working on some cool new features for the weekend. Anyone else coding on a Friday night? 💻</p>
-                    </div>
-                    <div class="post-actions">
-                        <button>❤️ 567 Likes</button>
-                        <button>💬 43 Comments</button>
-                        <button>🔄 89 Shares</button>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <div class="post-header">
-                        <img src="https://via.placeholder.com/50" alt="User avatar">
-                        <div>
-                            <h4>Mike Johnson</h4>
-                            <p>1 day ago</p>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <p>Finally finished refactoring that mess of a codebase. Feels good to clean things up properly 🧹</p>
-                    </div>
-                    <div class="post-actions">
-                        <button>❤️ 892 Likes</button>
-                        <button>💬 156 Comments</button>
-                        <button>🔄 178 Shares</button>
+            <div class="create-post">
+                <img src="profile.jpg" alt="Your profile" class="create-post-avatar">
+                <div class="create-post-input">
+                    <textarea id="post-text" placeholder="What's happening?"></textarea>
+                    <input type="file" id="post-image" accept="image/*" style="display: none;">
+                    <div id="image-preview" class="image-preview"></div>
+                    <div class="create-post-actions">
+                        <button id="add-image-btn" class="icon-btn">🖼️</button>
+                        <button id="submit-post" class="post-btn">Post</button>
                     </div>
                 </div>
             </div>
 
-            <div class="feed-sidebar">
-                <div class="sidebar-card">
-                    <h3>Trending Topics</h3>
-                    <ul class="trending-list">
-                        <li>#WebDevelopment</li>
-                        <li>#DataVisualization</li>
-                        <li>#JavaScript</li>
-                        <li>#Portfolio</li>
-                        <li>#Design</li>
-                    </ul>
-                </div>
+            <div id="posts-container"></div>
+        </main>
 
-                <div class="sidebar-card">
-                    <h3>Suggested Users</h3>
-                    <div class="user-suggestion">
-                        <img src="https://via.placeholder.com/40" alt="User">
-                        <div>
-                            <h5>Alex Rivera</h5>
-                            <p>Frontend Developer</p>
-                        </div>
-                        <button>Follow</button>
+        <aside class="right-sidebar">
+            <div class="sidebar-card">
+                <h3>Who to follow</h3>
+                <div style="padding: 12px 16px; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=sarah" style="width: 48px; height: 48px; border-radius: 50%;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 700; font-size: 0.95em;">Sarah Chen</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85em;">@sarahcodes</div>
                     </div>
-                    <div class="user-suggestion">
-                        <img src="https://via.placeholder.com/40" alt="User">
-                        <div>
-                            <h5>Emma Watson</h5>
-                            <p>UI/UX Designer</p>
-                        </div>
-                        <button>Follow</button>
+                    <button style="padding: 6px 16px; background: var(--accent-blue); color: #fff; border: none; border-radius: 20px; font-weight: 700; font-size: 0.85em; cursor: pointer;">Follow</button>
+                </div>
+                <div style="padding: 12px 16px; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=mike" style="width: 48px; height: 48px; border-radius: 50%;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 700; font-size: 0.95em;">Mike Rodriguez</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85em;">@mikedev</div>
                     </div>
+                    <button style="padding: 6px 16px; background: var(--accent-blue); color: #fff; border: none; border-radius: 20px; font-weight: 700; font-size: 0.85em; cursor: pointer;">Follow</button>
+                </div>
+                <div style="padding: 12px 16px; border-top: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px;">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=emma" style="width: 48px; height: 48px; border-radius: 50%;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 700; font-size: 0.95em;">Emma Johnson</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85em;">@emmajay</div>
+                    </div>
+                    <button style="padding: 6px 16px; background: var(--accent-blue); color: #fff; border: none; border-radius: 20px; font-weight: 700; font-size: 0.85em; cursor: pointer;">Follow</button>
                 </div>
             </div>
-        </div>
+
+            <div class="sidebar-card">
+                <h3>Trending</h3>
+                <div class="trending-item">
+                    <div class="trending-category">Web Development</div>
+                    <div class="trending-topic">#DataVisualization</div>
+                    <div class="trending-count">12.5K posts</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Technology</div>
+                    <div class="trending-topic">#JavaScript</div>
+                    <div class="trending-count">24.1K posts</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-category">Design</div>
+                    <div class="trending-topic">#Dashboard</div>
+                    <div class="trending-count">8.3K posts</div>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Saved Posts</h3>
+                <div id="saved-count" class="saved-info">0 saved posts</div>
+            </div>
+
+            <div style="padding: 16px; font-size: 0.85em; color: var(--text-secondary);">
+                <a href="https://github.com/TheJhyeFactor" target="_blank" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-blue)'" onmouseout="this.style.color='var(--text-secondary)'">GitHub: @TheJhyeFactor</a>
+            </div>
+        </aside>
     </div>
+
+    <script src="feed.js"></script>
 </body>
 </html>
