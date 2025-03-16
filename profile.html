@@ -26,73 +26,187 @@
                 <p>234 Posts</p>
             </header>
 
-            <div style="padding: 20px;">
-                <div style="display: flex; gap: 20px; margin-bottom: 30px; align-items: center;">
-                    <img src="profile.jpg" alt="Profile" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--accent-blue);">
-                    <div style="flex: 1;">
-                        <h2 style="font-size: 1.5em; margin-bottom: 4px;">Jhye O'meley</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 12px; font-size: 0.95em;">@TheJhyeFactor</p>
-                        <p style="color: var(--text-secondary); margin-bottom: 12px;">Full Stack Developer | Data Visualization Enthusiast</p>
-                        <p style="margin-bottom: 12px;"><a href="https://github.com/TheJhyeFactor" target="_blank" style="color: var(--accent-blue); text-decoration: none;">github.com/TheJhyeFactor</a></p>
-                        <div style="display: flex; gap: 24px; font-size: 0.95em;">
-                            <div><strong>12.8K</strong> <span style="color: var(--text-secondary);">Followers</span></div>
-                            <div><strong>234</strong> <span style="color: var(--text-secondary);">Posts</span></div>
+            <div style="padding: 0;">
+                <!-- Cover Banner -->
+                <div style="height: 200px; background: linear-gradient(135deg, #1d9bf0 0%, #0d8bd9 100%);"></div>
+
+                <!-- Profile Info -->
+                <div style="padding: 0 20px 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: -60px; margin-bottom: 20px;">
+                        <img src="profile.jpg" alt="Profile" style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--bg-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                        <button style="margin-top: 70px; padding: 8px 20px; background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 20px; font-weight: 700; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background='transparent'">Edit profile</button>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h2 style="font-size: 1.25em; font-weight: 700; margin-bottom: 4px;">Jhye O'meley</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 16px;">@TheJhyeFactor</p>
+
+                        <p style="margin-bottom: 12px; line-height: 1.5;">Full Stack Developer | Data Visualization Enthusiast</p>
+                        <p style="margin-bottom: 12px; line-height: 1.5;">Building cool stuff on the web. Love creating dashboards and visualizing data in meaningful ways.</p>
+
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 4px; color: var(--text-secondary); font-size: 0.9em;">
+                                <span>🔗</span>
+                                <a href="https://github.com/TheJhyeFactor" target="_blank" style="color: var(--accent-blue); text-decoration: none;">github.com/TheJhyeFactor</a>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px; color: var(--text-secondary); font-size: 0.9em;">
+                                <span>📅</span>
+                                <span>Joined March 2025</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 20px; font-size: 0.9em;">
                             <div><strong>456</strong> <span style="color: var(--text-secondary);">Following</span></div>
+                            <div><strong>12.8K</strong> <span style="color: var(--text-secondary);">Followers</span></div>
                         </div>
                     </div>
-                </div>
 
-                <div style="margin-bottom: 30px; padding: 20px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-color);">
-                    <h3 style="margin-bottom: 12px;">About</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">Building cool stuff on the web. Love creating dashboards and visualizing data in meaningful ways.</p>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">Check out my analytics dashboard project - built it to help people track their social media performance better.</p>
-
-                    <h4 style="margin-bottom: 10px; font-size: 0.95em;">Skills</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span style="padding: 6px 14px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.85em;">JavaScript</span>
-                        <span style="padding: 6px 14px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.85em;">HTML/CSS</span>
-                        <span style="padding: 6px 14px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.85em;">Data Visualization</span>
-                        <span style="padding: 6px 14px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.85em;">Chart.js</span>
-                        <span style="padding: 6px 14px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.85em;">Dashboard Design</span>
+                    <!-- Tabs -->
+                    <div style="border-bottom: 1px solid var(--border-color); margin-bottom: 0;">
+                        <div style="display: flex;">
+                            <button class="profile-tab active" data-tab="posts" style="flex: 1; padding: 16px; background: transparent; border: none; color: var(--text-primary); font-weight: 700; border-bottom: 3px solid var(--accent-blue); cursor: pointer;">Posts</button>
+                            <button class="profile-tab" data-tab="media" style="flex: 1; padding: 16px; background: transparent; border: none; color: var(--text-secondary); font-weight: 500; border-bottom: 3px solid transparent; cursor: pointer;">Media</button>
+                            <button class="profile-tab" data-tab="likes" style="flex: 1; padding: 16px; background: transparent; border: none; color: var(--text-secondary); font-weight: 500; border-bottom: 3px solid transparent; cursor: pointer;">Likes</button>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <h3 style="margin-bottom: 16px;">Recent Posts</h3>
-
-                    <div class="post">
-                        <div class="post-header">
-                            <img src="profile.jpg" alt="Profile">
-                            <div class="post-header-info">
-                                <h4>Jhye O'meley</h4>
-                                <p>2h ago</p>
+                    <!-- Posts Tab Content -->
+                    <div id="posts-tab" class="tab-content">
+                        <div class="post">
+                            <div class="post-header">
+                                <img src="profile.jpg" alt="Profile">
+                                <div class="post-header-info">
+                                    <div>
+                                        <span style="font-weight: 700;">Jhye O'meley</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">@TheJhyeFactor</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">· 2h ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-text">
+                                Just deployed my analytics dashboard! Really happy with how the data visualization turned out. Chart.js makes everything so much easier 📊
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 87</button>
+                                <button class="action-btn">🤍 1,243</button>
+                                <button class="action-btn">🔖 Save</button>
                             </div>
                         </div>
-                        <div class="post-text">
-                            Just deployed my new analytics dashboard! Check it out if you're into data visualization 📊
+
+                        <div class="post">
+                            <div class="post-header">
+                                <img src="profile.jpg" alt="Profile">
+                                <div class="post-header-info">
+                                    <div>
+                                        <span style="font-weight: 700;">Jhye O'meley</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">@TheJhyeFactor</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">· 1d ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-text">
+                                Working on a social media dashboard project. It's interesting to see how different metrics correlate with each other. The more you visualize, the more patterns you notice.
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 63</button>
+                                <button class="action-btn">🤍 892</button>
+                                <button class="action-btn">🔖 Save</button>
+                            </div>
                         </div>
-                        <div class="post-actions">
-                            <button class="action-btn">💬 87</button>
-                            <button class="action-btn liked">❤️ 1,243</button>
-                            <button class="action-btn">🔖 Save</button>
+
+                        <div class="post">
+                            <div class="post-header">
+                                <img src="profile.jpg" alt="Profile">
+                                <div class="post-header-info">
+                                    <div>
+                                        <span style="font-weight: 700;">Jhye O'meley</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">@TheJhyeFactor</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">· 3d ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-text">
+                                Finally got the dark/light theme toggle working perfectly. The key was using CSS variables for everything. Makes switching themes so much cleaner 🌙☀️
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 45</button>
+                                <button class="action-btn">🤍 567</button>
+                                <button class="action-btn">🔖 Save</button>
+                            </div>
+                        </div>
+
+                        <div class="post">
+                            <div class="post-header">
+                                <img src="profile.jpg" alt="Profile">
+                                <div class="post-header-info">
+                                    <div>
+                                        <span style="font-weight: 700;">Jhye O'meley</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">@TheJhyeFactor</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">· 5d ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-text">
+                                Building in public is scary but worth it. Sharing my progress helps keep me accountable and I get great feedback from the community 💪
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 112</button>
+                                <button class="action-btn">🤍 1,456</button>
+                                <button class="action-btn">🔖 Save</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="post">
-                        <div class="post-header">
-                            <img src="profile.jpg" alt="Profile">
-                            <div class="post-header-info">
-                                <h4>Jhye O'meley</h4>
-                                <p>5d ago</p>
+                    <!-- Media Tab Content -->
+                    <div id="media-tab" class="tab-content" style="display: none;">
+                        <div style="padding: 60px 20px; text-align: center; color: var(--text-secondary);">
+                            <p style="font-size: 1.1em; margin-bottom: 8px;">No media yet</p>
+                            <p style="font-size: 0.9em;">Posts with photos and videos will show up here</p>
+                        </div>
+                    </div>
+
+                    <!-- Likes Tab Content -->
+                    <div id="likes-tab" class="tab-content" style="display: none;">
+                        <div class="post">
+                            <div class="post-header">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=sarah" alt="Sarah Chen">
+                                <div class="post-header-info">
+                                    <div>
+                                        <span style="font-weight: 700;">Sarah Chen</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">@sarahcodes</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">· 2h ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-text">
+                                Just finished a deep dive into React Server Components. The future of web development is looking exciting! 🚀
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 34</button>
+                                <button class="action-btn liked">❤️ 156</button>
+                                <button class="action-btn">🔖 Save</button>
                             </div>
                         </div>
-                        <div class="post-text">
-                            Been working on this social analytics project. It's pretty interesting to see how different metrics correlate with each other.
-                        </div>
-                        <div class="post-actions">
-                            <button class="action-btn">💬 63</button>
-                            <button class="action-btn">🤍 892</button>
-                            <button class="action-btn">🔖 Save</button>
+
+                        <div class="post">
+                            <div class="post-header">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=alex" alt="Alex Turner">
+                                <div class="post-header-info">
+                                    <div>
+                                        <span style="font-weight: 700;">Alex Turner</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">@alexcodes</span>
+                                        <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">· 12h ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-text">
+                                TIL: You can use CSS :has() selector to style parent elements based on their children. Browser support is finally here! 🎉
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 89</button>
+                                <button class="action-btn liked">❤️ 312</button>
+                                <button class="action-btn">🔖 Save</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,6 +282,30 @@
             const btn = document.getElementById('theme-toggle');
             btn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
         }
+
+        // Tab switching
+        const tabs = document.querySelectorAll('.profile-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabName = tab.getAttribute('data-tab');
+
+                tabs.forEach(t => {
+                    t.style.color = 'var(--text-secondary)';
+                    t.style.fontWeight = '500';
+                    t.style.borderBottomColor = 'transparent';
+                });
+
+                tab.style.color = 'var(--text-primary)';
+                tab.style.fontWeight = '700';
+                tab.style.borderBottomColor = 'var(--accent-blue)';
+
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+
+                document.getElementById(`${tabName}-tab`).style.display = 'block';
+            });
+        });
 
         document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
         initTheme();

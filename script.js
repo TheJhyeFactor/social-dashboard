@@ -1,13 +1,21 @@
-const chartColors = {
-    primary: 'rgba(29, 155, 240, 0.8)',
-    secondary: 'rgba(113, 118, 123, 0.8)',
-    success: 'rgba(0, 186, 124, 0.8)',
-    warning: 'rgba(255, 212, 0, 0.8)',
-    danger: 'rgba(244, 33, 46, 0.8)',
-};
+function getChartColors() {
+    const theme = document.documentElement.getAttribute('data-theme') || 'dark';
 
-Chart.defaults.color = '#71767b';
-Chart.defaults.borderColor = '#2f3336';
+    return {
+        primary: 'rgba(29, 155, 240, 0.8)',
+        secondary: theme === 'dark' ? 'rgba(113, 118, 123, 0.8)' : 'rgba(83, 100, 113, 0.8)',
+        success: 'rgba(0, 186, 124, 0.8)',
+        warning: 'rgba(255, 212, 0, 0.8)',
+        danger: 'rgba(244, 33, 46, 0.8)',
+        textColor: theme === 'dark' ? '#71767b' : '#536471',
+        borderColor: theme === 'dark' ? '#2f3336' : '#eff3f4',
+    };
+}
+
+const chartColors = getChartColors();
+
+Chart.defaults.color = chartColors.textColor;
+Chart.defaults.borderColor = chartColors.borderColor;
 
 // follower growth data
 const followerData = {

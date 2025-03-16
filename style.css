@@ -17,7 +17,7 @@
 }
 
 [data-theme="light"] {
-    --bg-primary: #fff;
+    --bg-primary: #ffffff;
     --bg-secondary: #f7f9f9;
     --bg-hover: #f7f9f9;
     --border-color: #eff3f4;
@@ -26,6 +26,18 @@
     --accent-blue: #1d9bf0;
     --accent-red: #f4212e;
     --accent-green: #00ba7c;
+}
+
+[data-theme="light"] .sidebar {
+    background: var(--bg-primary);
+}
+
+[data-theme="light"] .dashboard-header {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="light"] Chart {
+    color: var(--text-secondary);
 }
 
 body {
