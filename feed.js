@@ -39,6 +39,23 @@ function getDefaultPosts() {
     const now = Date.now();
     return [
         {
+            id: now - 3600000,
+            userId: "alex",
+            text: "Spent 3 hours debugging only to realize I had a typo in my variable name. Classic developer moment 🤦‍♂️",
+            image: null,
+            likes: 423,
+            liked: false,
+            timestamp: new Date(now - 3600000).toISOString(),
+            comments: [
+                {
+                    id: now - 3500000,
+                    userId: "mike",
+                    text: "We've all been there! That's why I always use a linter now.",
+                    timestamp: new Date(now - 3500000).toISOString()
+                }
+            ]
+        },
+        {
             id: now - 7200000,
             userId: "sarah",
             text: "Just finished a deep dive into React Server Components. The future of web development is looking exciting! 🚀",
@@ -62,6 +79,16 @@ function getDefaultPosts() {
             ]
         },
         {
+            id: now - 10800000,
+            userId: "lisa",
+            text: "Design tip: White space is not wasted space. It's one of the most powerful tools in your design toolkit ✨",
+            image: null,
+            likes: 289,
+            liked: false,
+            timestamp: new Date(now - 10800000).toISOString(),
+            comments: []
+        },
+        {
             id: now - 14400000,
             userId: "mike",
             text: "Hot take: Writing tests is just as important as writing the actual code. Don't @ me 😤",
@@ -69,7 +96,31 @@ function getDefaultPosts() {
             likes: 89,
             liked: false,
             timestamp: new Date(now - 14400000).toISOString(),
-            comments: []
+            comments: [
+                {
+                    id: now - 14000000,
+                    userId: "emma",
+                    text: "100% agree. Tests have saved me so many times.",
+                    timestamp: new Date(now - 14000000).toISOString()
+                }
+            ]
+        },
+        {
+            id: now - 18000000,
+            userId: "emma",
+            text: "CSS Grid + Flexbox = Perfect layout combo. Stop using floats, it's 2025! 😅",
+            image: null,
+            likes: 534,
+            liked: false,
+            timestamp: new Date(now - 18000000).toISOString(),
+            comments: [
+                {
+                    id: now - 17500000,
+                    userId: "lisa",
+                    text: "Preach! Grid for layout, Flexbox for components.",
+                    timestamp: new Date(now - 17500000).toISOString()
+                }
+            ]
         },
         {
             id: now - 21600000,
@@ -87,6 +138,16 @@ function getDefaultPosts() {
                     timestamp: new Date(now - 21000000).toISOString()
                 }
             ]
+        },
+        {
+            id: now - 32400000,
+            userId: "mike",
+            text: "Working with APIs: Always handle errors. Always validate data. Always use try/catch. Your future self will thank you 🙏",
+            image: null,
+            likes: 612,
+            liked: false,
+            timestamp: new Date(now - 32400000).toISOString(),
+            comments: []
         },
         {
             id: now - 43200000,
@@ -112,6 +173,23 @@ function getDefaultPosts() {
             ]
         },
         {
+            id: now - 64800000,
+            userId: "sarah",
+            text: "Pro tip: Learn to read documentation. It's a superpower that will make you 10x more productive as a developer 📚",
+            image: null,
+            likes: 891,
+            liked: false,
+            timestamp: new Date(now - 64800000).toISOString(),
+            comments: [
+                {
+                    id: now - 64000000,
+                    userId: "alex",
+                    text: "MDN is my best friend tbh",
+                    timestamp: new Date(now - 64000000).toISOString()
+                }
+            ]
+        },
+        {
             id: now - 86400000,
             userId: "lisa",
             text: "Spent the weekend building a data visualization dashboard for tracking social media analytics. Learned so much about Chart.js!\n\nNext up: adding export to PDF functionality 📊",
@@ -119,6 +197,16 @@ function getDefaultPosts() {
             likes: 178,
             liked: false,
             timestamp: new Date(now - 86400000).toISOString(),
+            comments: []
+        },
+        {
+            id: now - 108000000,
+            userId: "alex",
+            text: "Reminder: git commit often. Small, focused commits are way easier to debug and revert than massive ones 🔄",
+            image: null,
+            likes: 445,
+            liked: false,
+            timestamp: new Date(now - 108000000).toISOString(),
             comments: []
         },
         {
@@ -139,6 +227,16 @@ function getDefaultPosts() {
             ]
         },
         {
+            id: now - 151200000,
+            userId: "lisa",
+            text: "Typography matters! Your design can be perfect but if the text is hard to read, users will leave. Font size, line height, contrast - all crucial 📝",
+            image: null,
+            likes: 234,
+            liked: false,
+            timestamp: new Date(now - 151200000).toISOString(),
+            comments: []
+        },
+        {
             id: now - 172800000,
             userId: "sarah",
             text: "Debugging tip: console.log() is your friend, but console.table() is your best friend when working with arrays of objects 🔍",
@@ -149,13 +247,13 @@ function getDefaultPosts() {
             comments: []
         },
         {
-            id: now - 259200000,
+            id: now - 216000000,
             userId: "emma",
             text: "Working on a new project that combines my love for design and development. Stay tuned! 👀",
             image: null,
             likes: 92,
             liked: false,
-            timestamp: new Date(now - 259200000).toISOString(),
+            timestamp: new Date(now - 216000000).toISOString(),
             comments: []
         }
     ];
@@ -303,13 +401,19 @@ function renderPosts() {
         const user = users[post.userId] || users.jhye;
         const isOwnPost = post.userId === "jhye";
 
+        const profileUrl = post.userId === "jhye" ? "profile.html" : `${post.userId}.html`;
+
         return `
         <div class="post">
             <div class="post-header">
-                <img src="${user.avatar}" alt="${user.name}">
+                <a href="${profileUrl}" style="text-decoration: none;">
+                    <img src="${user.avatar}" alt="${user.name}" style="cursor: pointer;">
+                </a>
                 <div class="post-header-info">
                     <div>
-                        <span style="font-weight: 700;">${user.name}</span>
+                        <a href="${profileUrl}" style="text-decoration: none; color: inherit;">
+                            <span style="font-weight: 700; cursor: pointer;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${user.name}</span>
+                        </a>
                         <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">${user.handle}</span>
                         <span style="color: var(--text-secondary); font-size: 0.9em; margin-left: 4px;">· ${formatTime(post.timestamp)}</span>
                     </div>
@@ -343,12 +447,17 @@ function renderPosts() {
                     ${post.comments.map(comment => {
                         const commentUser = users[comment.userId] || users.jhye;
                         const isOwnComment = comment.userId === "jhye";
+                        const commentProfileUrl = comment.userId === "jhye" ? "profile.html" : `${comment.userId}.html`;
                         return `
                         <div class="comment">
-                            <img src="${commentUser.avatar}" alt="${commentUser.name}" class="comment-avatar">
+                            <a href="${commentProfileUrl}" style="text-decoration: none;">
+                                <img src="${commentUser.avatar}" alt="${commentUser.name}" class="comment-avatar" style="cursor: pointer;">
+                            </a>
                             <div class="comment-content">
                                 <div class="comment-header">
-                                    <h5>${commentUser.name}</h5>
+                                    <a href="${commentProfileUrl}" style="text-decoration: none; color: inherit;">
+                                        <h5 style="cursor: pointer;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${commentUser.name}</h5>
+                                    </a>
                                     <span>${formatTime(comment.timestamp)}</span>
                                 </div>
                                 <p>${comment.text}</p>
