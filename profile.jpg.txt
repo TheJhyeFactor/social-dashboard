@@ -1,3 +1,0 @@
-PLACEHOLDER: Add your profile headshot here as "profile.jpg"
-Recommended size: 400x400px square
-Make sure it's named exactly "profile.jpg"
