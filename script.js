@@ -1,10 +1,13 @@
 const chartColors = {
-    primary: 'rgba(102, 126, 234, 0.8)',
-    secondary: 'rgba(118, 75, 162, 0.8)',
-    success: 'rgba(56, 161, 105, 0.8)',
-    warning: 'rgba(237, 137, 54, 0.8)',
-    danger: 'rgba(229, 62, 62, 0.8)',
+    primary: 'rgba(29, 155, 240, 0.8)',
+    secondary: 'rgba(113, 118, 123, 0.8)',
+    success: 'rgba(0, 186, 124, 0.8)',
+    warning: 'rgba(255, 212, 0, 0.8)',
+    danger: 'rgba(244, 33, 46, 0.8)',
 };
+
+Chart.defaults.color = '#71767b';
+Chart.defaults.borderColor = '#2f3336';
 
 // follower growth data
 const followerData = {
