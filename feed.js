@@ -1,6 +1,7 @@
 let posts = [];
 let savedPosts = [];
 let currentImageData = null;
+let following = [];
 
 const users = {
     jhye: {
@@ -262,6 +263,7 @@ function getDefaultPosts() {
 function loadData() {
     const savedPostsData = localStorage.getItem('posts');
     const savedPostsList = localStorage.getItem('savedPosts');
+    const savedFollowing = localStorage.getItem('following');
 
     if (savedPostsData) {
         posts = JSON.parse(savedPostsData);
@@ -274,13 +276,47 @@ function loadData() {
         savedPosts = JSON.parse(savedPostsList);
     }
 
+    if (savedFollowing) {
+        following = JSON.parse(savedFollowing);
+    }
+
     renderPosts();
     updateSavedCount();
+    updateFollowButtons();
 }
 
 function saveData() {
     localStorage.setItem('posts', JSON.stringify(posts));
     localStorage.setItem('savedPosts', JSON.stringify(savedPosts));
+    localStorage.setItem('following', JSON.stringify(following));
+}
+
+function toggleFollow(userId) {
+    if (following.includes(userId)) {
+        following = following.filter(id => id !== userId);
+    } else {
+        following.push(userId);
+    }
+    saveData();
+    updateFollowButtons();
+}
+
+function updateFollowButtons() {
+    const followBtns = document.querySelectorAll('.follow-btn');
+    followBtns.forEach(btn => {
+        const userId = btn.getAttribute('data-user');
+        if (following.includes(userId)) {
+            btn.textContent = 'Following';
+            btn.style.background = 'transparent';
+            btn.style.color = 'var(--text-primary)';
+            btn.style.border = '1px solid var(--border-color)';
+        } else {
+            btn.textContent = 'Follow';
+            btn.style.background = 'var(--accent-blue)';
+            btn.style.color = '#fff';
+            btn.style.border = 'none';
+        }
+    });
 }
 
 function createPost() {

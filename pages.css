@@ -178,7 +178,6 @@ body {
     padding: 16px;
     border-bottom: 1px solid var(--border-color);
     transition: background 0.2s;
-    cursor: pointer;
 }
 
 .post:hover {
